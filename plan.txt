@@ -35,8 +35,6 @@ paper vs scissors, winner = scissors
 if playerselection == winner, give "you win" statement
 if playerselection !== winner, give "you lose" statement
 
-NVM organize with ternary but include line breaks or readability. NVM
-
 winner = ()
 
 evaluate which user chose the winning option.
@@ -49,9 +47,3 @@ if returns the first truthy value.
 if (playerselection == winner)
 
 write you win
-
-WHAT DID I LEARN
-
-I learned I can group conditions in my if else statements together, and also to group multiple correct outcomes together. instead of writing "you won" multiple times I grouped every instance together. also those instance grouped together need to be wrapped in brackets
-I learned how to use return values in functions. you need to actually return something, and it can be text!
-logging a function with a return value is how you see the return value.
