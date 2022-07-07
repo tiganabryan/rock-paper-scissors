@@ -1,0 +1,57 @@
+need to create array of rock paper scissors
+
+log array
+
+need to pick an index from array
+
+pick random number
+
+round random number
+
+pick random index from array
+
+pick random index between 0 and 10
+
+pick random index between 0 and 2
+
+problem: how do I tell computer the rules?
+
+rock > scissors
+scissors > paper
+paper > rock
+
+if comp rock and human scissors, comp wins
+
+does rock always win?
+
+rock wins? eval.
+how to tell which selection wins?
+either assign each selection a number but that doesn't work because each can only win in one instance in the game
+
+rock vs scissors, winner = rock
+rock vs paper, winner = paper
+paper vs scissors, winner = scissors
+
+if playerselection == winner, give "you win" statement
+if playerselection !== winner, give "you lose" statement
+
+NVM organize with ternary but include line breaks or readability. NVM
+
+winner = ()
+
+evaluate which user chose the winning option.
+if human chose it, give the "you win" statement.
+
+return whichever matches winner's value.
+
+if returns the first truthy value.
+
+if (playerselection == winner)
+
+write you win
+
+WHAT DID I LEARN
+
+I learned I can group conditions in my if else statements together, and also to group multiple correct outcomes together. instead of writing "you won" multiple times I grouped every instance together. also those instance grouped together need to be wrapped in brackets
+I learned how to use return values in functions. you need to actually return something, and it can be text!
+logging a function with a return value is how you see the return value.

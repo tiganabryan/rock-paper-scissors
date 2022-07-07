@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>debugging</title>
+</head>
+<body>
+    <script>
+        let user = 'paper'
+        let computer = 'rock'
+        let winner = ''
+
+        if (user || computer == 'paper' & user || computer == 'scissors') {
+        winner = 'scissors'
+
+        } else if (user || computer == 'rock' & user || computer == 'paper') {
+            winner = 'paper'
+        }
+
+        console.log(winner)
+
+        if (user == winner) {
+            console.log('you won!')
+        } else {
+            console.log('you lost')
+        }
+    </script>
+</body>
+</html>
