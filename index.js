@@ -54,7 +54,15 @@ const game = () => {
         computerScoreText.textContent = `computer's score: ${computerScore}`
     }
     const winner = document.querySelector('.winner')
-    winner.textContent = playerScore > computerScore ? 'you won this game!' : 'computer won this game!'
+
+    if (playerScore > computerScore) {
+        winner.textContent = 'you won this game!'
+    } else if (playerScore == computerScore) {
+    winner.textContent = 'it\'s a tie!'
+    } else {
+        winner.textContent = 'computer won this game!'
+    }
+
 }
 
 game()
