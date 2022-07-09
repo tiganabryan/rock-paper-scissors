@@ -26,19 +26,21 @@ playRound = (computerSelection) => {
     if ((playerSelection == 'rock' && computerSelection == 'scissors') ||
     (playerSelection == 'scissors' && computerSelection == 'paper') ||
     (playerSelection == 'paper' && computerSelection == 'rock')) {
-        return `you won! ${playerSelection} beats ${computerSelection}`
+        playerScore += 1
 
     } else if ((computerSelection == 'rock' && playerSelection == 'scissors') ||
     (computerSelection == 'scissors' && playerSelection == 'paper') ||
     (computerSelection == 'paper' && playerSelection == 'rock')) {
-        return `you lose! ${computerSelection} beats ${playerSelection}`
+        computerScore += 1
 
     } else if (computerSelection == playerSelection) {
-        return `it's a tie! ${computerSelection} and ${playerSelection} are the same`
+        log('tie')
 
     } else {
         return `please try again! ${playerSelection} is not a valid answer`
     }
+
+    return [playerScore, computerScore]
 }
 
 
