@@ -9,10 +9,6 @@ let playerScore = 0
 let scoreBoard = document.querySelector('.score-board')
 let playerScoreText = document.querySelector('.player-score')
 let computerScoreText = document.querySelector('.computer-score')
-
-// playerScoreText.textContent = `your score: ${playerScore}`
-// computerScoreText.textContent = `computer's score: ${computerScore}`
-
     
 
 const getRandomNumber = (min, max) => {
@@ -48,15 +44,6 @@ const playRound = (computerSelection) => {
     } else {
         log('error')
     }
-
-     
-
-    // debugger
-    // scoreBoard.appendChild(playerScoreText)
-    // scoreBoard.appendChild(computerScoreText)
-    // debugger
-
-    // return playerScore, computerScore
 }
 
 
@@ -65,14 +52,10 @@ const game = () => {
         log(playRound())
         playerScoreText.textContent = `your score: ${playerScore}`
         computerScoreText.textContent = `computer's score: ${computerScore}`
-        // return playerScore, computerScore
     }
     const winner = document.querySelector('.winner')
     winner.textContent = playerScore > computerScore ? 'you won this game!' : 'computer won this game!'
-
-    // scoreBoard.appendChild(winner)
 }
 
 game()
 
-//starting number, if number is such and such, incrimentor the code by this. in this case, do number+1 each time we loop.
