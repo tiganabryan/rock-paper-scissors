@@ -3,6 +3,9 @@ const log = console.log
 let computerSelection = ''
 let playerSelection = ''
 
+let computerScore = 0
+let playerScore = 0
+
 const getRandomNumber = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1)) + min
   };
