@@ -1,4 +1,14 @@
-.game-options,
+.start-container,
+.start-item {
+    display: flex;
+}
+
+.start-container {
+    margin-bottom: 1%;
+}
+
+.game-container,
 .btn-item {
     display: flex;
+    gap: 2%;
 }
