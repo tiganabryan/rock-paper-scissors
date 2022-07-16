@@ -38,15 +38,7 @@ const hideTieScore = () => {
     tieScoreText.style.display = 'none'
     // tieScoreText.classList.toggle('fade')
     // when another button is clicked, fade out
-    // query selector all, event listener.
 }
-
-const allPlayerSelections = document.querySelectorAll('.player-selection-btn')
-// allPlayerSelections.addEventListener('click',hideTieScore)
-
-// Array.from(allPlayerSelections).forEach(btn => {
-//     btn.addEventListener('click', allPlayerSelections.addEventListener('click', hideTieScore));
-// });
 
 const winner = document.querySelector('.winner')
 winner.style.display = "none"
@@ -71,17 +63,13 @@ const playRound = (playerSelection) => {
     (computerSelection == 'paper' && playerSelection == 'rock')) {
         computerScore += 1
         computerScoreText.textContent = computerScore
+        // scoreBoard.style.display = 'block'
         return computerScore
 
     } else if (computerSelection == playerSelection) {
         scoreBoard.style.display = 'block'
         showTieScore()
-
-        Array.from(allPlayerSelections).forEach(btn => {
-            btn.addEventListener('click', hideTieScore);
-        });
-
-        // setTimeout(hideTieScore, 1500)
+        setTimeout(hideTieScore, 1500)
         log('tie') // add 'tie round' and then make it disappear after 5 seconds'
 
     } else {
