@@ -52,8 +52,8 @@ winner.style.display = "none"
 
 
 
-const playRound = (playerSelection) => {
-    computerSelection = computerPlay()
+const playRound = (playerSelection, computerSelection) => {
+    // computerSelection = computerPlay()
     scoreBoard.style.display = 'block'
 
 
@@ -90,21 +90,24 @@ const rockBtn = document.getElementById('rock')
     rockBtn.addEventListener('click', () => {
         playerSelection = 'rock';
         // return log(playerSelection)
-        playRound(playerSelection)
+        computerSelection = computerPlay()
+        playRound(playerSelection, computerSelection)
     })
 
 const paperBtn = document.getElementById('paper')
     paperBtn.addEventListener('click', () => {
         playerSelection = 'paper';
         // return log(playerSelection)
-        playRound(playerSelection)
+        computerSelection = computerPlay()
+        playRound(playerSelection, computerSelection)
     })
 
 const scissorsBtn = document.getElementById('scissors')
     scissorsBtn.addEventListener('click', () => {
         playerSelection = 'scissors';
         // return log(playerSelection)
-        playRound(playerSelection)
+        computerSelection = computerPlay()
+        playRound(playerSelection, computerSelection)
     })
 
 
