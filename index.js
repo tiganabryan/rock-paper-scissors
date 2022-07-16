@@ -29,22 +29,18 @@ gameContainer.style.display = 'none'
 let scoreBoard = document.getElementById('score-board')
 scoreBoard.style.display = "none"
 
-let playerScoreText = document.getElementById('player-score')
-let computerScoreText = document.getElementById('computer-score')
+let playerScoreText = document.getElementById('player-score-number')
+let computerScoreText = document.getElementById('computer-score-number')
 
 let tieScoreText = document.getElementById('tie-score')
 tieScoreText.style.display = 'none'
 
 const showTieScore = () => {
     tieScoreText.style.display = 'block'
-    // tieScoreText.classList.toggle('fade')
-    // when another button is clicked, fade out
 }
 
 const hideTieScore = () => {
     tieScoreText.style.display = 'none'
-    // tieScoreText.classList.toggle('fade')
-    // when another button is clicked, fade out
 }
 
 const winner = document.querySelector('.winner')
@@ -62,7 +58,6 @@ const playRound = (playerSelection, computerSelection) => {
     (playerSelection == 'paper' && computerSelection == 'rock')) {
         playerScore += 1
         playerScoreText.textContent = playerScore
-        // scoreBoard.style.display = 'block' // add this to the game func. should display the second the start button is clicked
         return playerScore
 
     } else if ((computerSelection == 'rock' && playerSelection == 'scissors') ||
@@ -70,14 +65,12 @@ const playRound = (playerSelection, computerSelection) => {
     (computerSelection == 'paper' && playerSelection == 'rock')) {
         computerScore += 1
         computerScoreText.textContent = computerScore
-        // scoreBoard.style.display = 'block'
         return computerScore
 
     } else if (computerSelection == playerSelection) {
         scoreBoard.style.display = 'block'
         showTieScore()
         setTimeout(hideTieScore, 1500)
-        log('tie') // add 'tie round' and then make it disappear after 5 seconds'
 
     } else {
         log('error')
@@ -85,38 +78,15 @@ const playRound = (playerSelection, computerSelection) => {
 }
 
 
-
-// const rockBtn = document.getElementById('rock')
-//     rockBtn.addEventListener('click', () => {
-//         playerSelection = 'rock';
-//         // return log(playerSelection)
-//         computerSelection = computerPlay()
-//         playRound(playerSelection, computerSelection)
-//     })
-
-// const paperBtn = document.getElementById('paper')
-//     paperBtn.addEventListener('click', () => {
-//         playerSelection = 'paper';
-//         // return log(playerSelection)
-//         computerSelection = computerPlay()
-//         playRound(playerSelection, computerSelection)
-//     })
-
-// const scissorsBtn = document.getElementById('scissors')
-//     scissorsBtn.addEventListener('click', () => {
-//         playerSelection = 'scissors';
-//         // return log(playerSelection)
-//         computerSelection = computerPlay()
-//         playRound(playerSelection, computerSelection)
-//     })
-
-
 startBtn.addEventListener('click', () => {
-    // log('e working')
     game()
 })
 
 const game = () => {
+    scoreBoard.style.display = "block"
+    playerScoreText.textContent = playerScore
+    computerScoreText.textContent = computerScore
+
     // gameContainer.style.display = 'flex'
     if (playerScore < 5 && computerScore < 5) {
         gameContainer.style.display = 'flex'
@@ -124,15 +94,13 @@ const game = () => {
         const rockBtn = document.getElementById('rock')
             rockBtn.addEventListener('click', () => {
                 playerSelection = 'rock';
-                // return log(playerSelection)
                 computerSelection = computerPlay()
+
                 playRound(playerSelection, computerSelection)
-                // return playerScore, computerScore                
-                log(playerScore, computerScore)
 
                 if (playerScore == 5 || computerScore == 5) {
                     gameContainer.style.display = 'none'
-                    winner.textContent = playerScore == 5 ? 'you won' : 'computer won'
+                    winner.textContent = playerScore == 5 ? 'you won 😎' : 'computer won'
                     winner.style.display = 'block'
                 }
             })
@@ -140,15 +108,13 @@ const game = () => {
         const paperBtn = document.getElementById('paper')
             paperBtn.addEventListener('click', () => {
                 playerSelection = 'paper';
-                // return log(playerSelection)
                 computerSelection = computerPlay()
+
                 playRound(playerSelection, computerSelection)
-                // return playerScore, computerScore
-                log(playerScore, computerScore)
 
                 if (playerScore == 5 || computerScore == 5) {
                     gameContainer.style.display = 'none'
-                    winner.textContent = playerScore == 5 ? 'you won' : 'computer won'
+                    winner.textContent = playerScore == 5 ? 'you won 😎' : 'computer won'
                     winner.style.display = 'block'
                 }
             })
@@ -156,22 +122,14 @@ const game = () => {
         const scissorsBtn = document.getElementById('scissors')
             scissorsBtn.addEventListener('click', () => {
                 playerSelection = 'scissors';
-                // return log(playerSelection)
                 computerSelection = computerPlay()
+
                 playRound(playerSelection, computerSelection)
-                // return playerScore, computerScore
-                log(playerScore, computerScore)
 
                 if (playerScore == 5 || computerScore == 5) {
                     gameContainer.style.display = 'none'
-                    winner.textContent = playerScore == 5 ? 'you won' : 'computer won'
+                    winner.textContent = playerScore == 5 ? 'you won 😎' : 'computer won'
                     winner.style.display = 'block'
                 }
             })
-
-    // } else if (playerScore == 5 || computerScore == 5) {
-    //         winner.textContent = playerScore == 5 ? 'you won' : 'computer won'
-    //         winner.style.display = 'block'
-    //     }
-// }
         }}
