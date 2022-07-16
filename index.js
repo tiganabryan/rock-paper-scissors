@@ -51,7 +51,7 @@ const playRound = (playerSelection) => {
         return computerScore
 
     } else if (computerSelection == playerSelection) {
-        log('tie')
+        log('tie') // add 'tie round' and then make it disappear after 5 seconds'
 
     } else {
         log('error')
