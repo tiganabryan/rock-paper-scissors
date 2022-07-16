@@ -114,8 +114,11 @@ startBtn.addEventListener('click', () => {
 })
 
 const game = () => {
-    gameContainer.style.display = 'flex'
-    // if (playerScore < 5 && computerScore) {
-    //     gameContainer.style.display = 'none'
-    // }
+    // gameContainer.style.display = 'flex'
+    if (playerScore < 5 && computerScore < 5) {
+        gameContainer.style.display = 'flex'
+    } else {
+        winner.textContent = playerScore == 5 ? 'you won' : 'computer won'
+        winner.style.display = 'block'
+    }
 }
