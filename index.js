@@ -127,6 +127,14 @@ const game = () => {
                 // return log(playerSelection)
                 computerSelection = computerPlay()
                 playRound(playerSelection, computerSelection)
+                // return playerScore, computerScore                
+                log(playerScore, computerScore)
+
+                if (playerScore == 5 || computerScore == 5) {
+                    gameContainer.style.display = 'none'
+                    winner.textContent = playerScore == 5 ? 'you won' : 'computer won'
+                    winner.style.display = 'block'
+                }
             })
 
         const paperBtn = document.getElementById('paper')
@@ -135,6 +143,14 @@ const game = () => {
                 // return log(playerSelection)
                 computerSelection = computerPlay()
                 playRound(playerSelection, computerSelection)
+                // return playerScore, computerScore
+                log(playerScore, computerScore)
+
+                if (playerScore == 5 || computerScore == 5) {
+                    gameContainer.style.display = 'none'
+                    winner.textContent = playerScore == 5 ? 'you won' : 'computer won'
+                    winner.style.display = 'block'
+                }
             })
 
         const scissorsBtn = document.getElementById('scissors')
@@ -143,10 +159,19 @@ const game = () => {
                 // return log(playerSelection)
                 computerSelection = computerPlay()
                 playRound(playerSelection, computerSelection)
+                // return playerScore, computerScore
+                log(playerScore, computerScore)
+
+                if (playerScore == 5 || computerScore == 5) {
+                    gameContainer.style.display = 'none'
+                    winner.textContent = playerScore == 5 ? 'you won' : 'computer won'
+                    winner.style.display = 'block'
+                }
             })
 
-    } else {
-        winner.textContent = playerScore == 5 ? 'you won' : 'computer won'
-        winner.style.display = 'block'
-    }
-}
+    // } else if (playerScore == 5 || computerScore == 5) {
+    //         winner.textContent = playerScore == 5 ? 'you won' : 'computer won'
+    //         winner.style.display = 'block'
+    //     }
+// }
+        }}
