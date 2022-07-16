@@ -19,12 +19,11 @@ computerPlay = () => {
 }
 
 
+const startBtn = document.getElementById('start-btn')
+
 const gameContainer = document.getElementById('game-container')
 gameContainer.style.display = 'none'
 
-const startBtn = document.getElementById('start-btn')
-
-const gameButtons = document.querySelectorAll('.player-selection-btn')
 
 
 let scoreBoard = document.getElementById('score-board')
@@ -111,12 +110,12 @@ const scissorsBtn = document.getElementById('scissors')
 
 startBtn.addEventListener('click', () => {
     // log('e working')
-    // game()
+    game()
 })
 
 const game = () => {
-    
-    if (playerScore < 5 && computerScore) {
-        gameContainer.style.display = 'none'
-    }
+    gameContainer.style.display = 'flex'
+    // if (playerScore < 5 && computerScore) {
+    //     gameContainer.style.display = 'none'
+    // }
 }

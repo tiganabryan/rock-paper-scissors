@@ -4,7 +4,7 @@
 }
 
 .start-container {
-    margin-bottom: 1%;
+    margin-bottom: 4%;
 }
 
 .game-container,
@@ -20,4 +20,8 @@
     -ms-transition: opacity 0.3s ease-in-out;
     -o-transition: opacity 0.3s ease-in-out;
     transition: opacity 0.3s ease-in-out;
+}
+
+.tie-score.fade {
+    opacity: 0;
 }
