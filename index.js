@@ -49,7 +49,6 @@ winner.style.display = "none"
 
 
 const playRound = (playerSelection, computerSelection) => {
-    // computerSelection = computerPlay()
     scoreBoard.style.display = 'block'
 
 
@@ -87,7 +86,6 @@ const game = () => {
     playerScoreText.textContent = playerScore
     computerScoreText.textContent = computerScore
 
-    // gameContainer.style.display = 'flex'
     if (playerScore < 5 && computerScore < 5) {
         gameContainer.style.display = 'flex'
 
