@@ -7,15 +7,10 @@ let computerScore = 0
 let playerScore = 0
 
 
-const getRandomNumber = (min, max) => {
-    return Math.floor(Math.random() * (max - min + 1)) + min
-};
-
 let gameOptions = ['rock', 'paper', 'scissors']
-const randomIndex = getRandomNumber(0,2)
 
-computerPlay = () => {
-    return gameOptions[randomIndex]
+let computerPlay = () => {
+    return gameOptions[Math.floor(Math.random() * gameOptions.length)];
 }
 
 
