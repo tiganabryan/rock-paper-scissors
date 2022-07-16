@@ -23,6 +23,9 @@ computerPlay = () => {
 let scoreBoard = document.getElementById('score-board')
 scoreBoard.style.display = "none"
 
+let playerScoreText = document.getElementById('player-score')
+let computerScoreText = document.getElementById('computer-score')
+
 const winner = document.querySelector('.winner')
 winner.style.display = "none"
 
@@ -34,12 +37,18 @@ const playRound = (playerSelection) => {
     if ((playerSelection == 'rock' && computerSelection == 'scissors') ||
     (playerSelection == 'scissors' && computerSelection == 'paper') ||
     (playerSelection == 'paper' && computerSelection == 'rock')) {
-        return log(playerScore += 1)
+        playerScore += 1
+        playerScoreText.textContent = playerScore
+        scoreBoard.style.display = 'block' // add this to the game func. should display the second the start button is clicked
+        return playerScore
 
     } else if ((computerSelection == 'rock' && playerSelection == 'scissors') ||
     (computerSelection == 'scissors' && playerSelection == 'paper') ||
     (computerSelection == 'paper' && playerSelection == 'rock')) {
-        return log(computerScore += 1)
+        computerScore += 1
+        computerScoreText.textContent = computerScore
+        scoreBoard.style.display = 'block'
+        return computerScore
 
     } else if (computerSelection == playerSelection) {
         log('tie')

@@ -23,8 +23,8 @@
 // let scoreBoard = document.getElementById('score-board')
 // scoreBoard.style.display = "none"
 
-let playerScoreText = document.getElementById('player-score')
-let computerScoreText = document.getElementById('computer-score')
+// let playerScoreText = document.getElementById('player-score')
+// let computerScoreText = document.getElementById('computer-score')
 
 
 const gameContainer = document.getElementById('game-container')
