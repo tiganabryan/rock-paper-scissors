@@ -68,8 +68,8 @@ const playRound = (playerSelection) => {
 
     } else if (computerSelection == playerSelection) {
         scoreBoard.style.display = 'block'
-        setTimeout(showTieScore, 1000)
-        setTimeout(hideTieScore, 5000)
+        showTieScore()
+        setTimeout(hideTieScore, 1500)
         log('tie') // add 'tie round' and then make it disappear after 5 seconds'
 
     } else {
