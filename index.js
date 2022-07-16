@@ -19,12 +19,20 @@ computerPlay = () => {
 }
 
 
+const gameContainer = document.getElementById('game-container')
+gameContainer.style.display = 'none'
+
+const startBtn = document.getElementById('start-btn')
+
+const gameButtons = document.querySelectorAll('.player-selection-btn')
+
 
 let scoreBoard = document.getElementById('score-board')
 scoreBoard.style.display = "none"
 
 let playerScoreText = document.getElementById('player-score')
 let computerScoreText = document.getElementById('computer-score')
+
 let tieScoreText = document.getElementById('tie-score')
 tieScoreText.style.display = 'none'
 
@@ -99,3 +107,16 @@ const scissorsBtn = document.getElementById('scissors')
         // return log(playerSelection)
         playRound(playerSelection)
     })
+
+
+startBtn.addEventListener('click', () => {
+    // log('e working')
+    // game()
+})
+
+const game = () => {
+    
+    if (playerScore < 5 && computerScore) {
+        gameContainer.style.display = 'none'
+    }
+}
