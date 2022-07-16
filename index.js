@@ -86,29 +86,29 @@ const playRound = (playerSelection, computerSelection) => {
 
 
 
-const rockBtn = document.getElementById('rock')
-    rockBtn.addEventListener('click', () => {
-        playerSelection = 'rock';
-        // return log(playerSelection)
-        computerSelection = computerPlay()
-        playRound(playerSelection, computerSelection)
-    })
+// const rockBtn = document.getElementById('rock')
+//     rockBtn.addEventListener('click', () => {
+//         playerSelection = 'rock';
+//         // return log(playerSelection)
+//         computerSelection = computerPlay()
+//         playRound(playerSelection, computerSelection)
+//     })
 
-const paperBtn = document.getElementById('paper')
-    paperBtn.addEventListener('click', () => {
-        playerSelection = 'paper';
-        // return log(playerSelection)
-        computerSelection = computerPlay()
-        playRound(playerSelection, computerSelection)
-    })
+// const paperBtn = document.getElementById('paper')
+//     paperBtn.addEventListener('click', () => {
+//         playerSelection = 'paper';
+//         // return log(playerSelection)
+//         computerSelection = computerPlay()
+//         playRound(playerSelection, computerSelection)
+//     })
 
-const scissorsBtn = document.getElementById('scissors')
-    scissorsBtn.addEventListener('click', () => {
-        playerSelection = 'scissors';
-        // return log(playerSelection)
-        computerSelection = computerPlay()
-        playRound(playerSelection, computerSelection)
-    })
+// const scissorsBtn = document.getElementById('scissors')
+//     scissorsBtn.addEventListener('click', () => {
+//         playerSelection = 'scissors';
+//         // return log(playerSelection)
+//         computerSelection = computerPlay()
+//         playRound(playerSelection, computerSelection)
+//     })
 
 
 startBtn.addEventListener('click', () => {
@@ -120,6 +120,31 @@ const game = () => {
     // gameContainer.style.display = 'flex'
     if (playerScore < 5 && computerScore < 5) {
         gameContainer.style.display = 'flex'
+
+        const rockBtn = document.getElementById('rock')
+            rockBtn.addEventListener('click', () => {
+                playerSelection = 'rock';
+                // return log(playerSelection)
+                computerSelection = computerPlay()
+                playRound(playerSelection, computerSelection)
+            })
+
+        const paperBtn = document.getElementById('paper')
+            paperBtn.addEventListener('click', () => {
+                playerSelection = 'paper';
+                // return log(playerSelection)
+                computerSelection = computerPlay()
+                playRound(playerSelection, computerSelection)
+            })
+
+        const scissorsBtn = document.getElementById('scissors')
+            scissorsBtn.addEventListener('click', () => {
+                playerSelection = 'scissors';
+                // return log(playerSelection)
+                computerSelection = computerPlay()
+                playRound(playerSelection, computerSelection)
+            })
+
     } else {
         winner.textContent = playerScore == 5 ? 'you won' : 'computer won'
         winner.style.display = 'block'
