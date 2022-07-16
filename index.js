@@ -25,6 +25,7 @@ scoreBoard.style.display = "none"
 
 let playerScoreText = document.getElementById('player-score')
 let computerScoreText = document.getElementById('computer-score')
+let tieScoreText = document.getElementById('tie-score')
 
 const winner = document.querySelector('.winner')
 winner.style.display = "none"
