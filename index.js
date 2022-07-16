@@ -26,6 +26,19 @@ scoreBoard.style.display = "none"
 let playerScoreText = document.getElementById('player-score')
 let computerScoreText = document.getElementById('computer-score')
 let tieScoreText = document.getElementById('tie-score')
+tieScoreText.style.display = 'none'
+
+const showTieScore = () => {
+    tieScoreText.style.display = 'block'
+    // tieScoreText.classList.toggle('fade')
+    // when another button is clicked, fade out
+}
+
+const hideTieScore = () => {
+    tieScoreText.style.display = 'none'
+    // tieScoreText.classList.toggle('fade')
+    // when another button is clicked, fade out
+}
 
 const winner = document.querySelector('.winner')
 winner.style.display = "none"
@@ -34,13 +47,15 @@ winner.style.display = "none"
 
 const playRound = (playerSelection) => {
     computerSelection = computerPlay()
+    scoreBoard.style.display = 'block'
+
 
     if ((playerSelection == 'rock' && computerSelection == 'scissors') ||
     (playerSelection == 'scissors' && computerSelection == 'paper') ||
     (playerSelection == 'paper' && computerSelection == 'rock')) {
         playerScore += 1
         playerScoreText.textContent = playerScore
-        scoreBoard.style.display = 'block' // add this to the game func. should display the second the start button is clicked
+        // scoreBoard.style.display = 'block' // add this to the game func. should display the second the start button is clicked
         return playerScore
 
     } else if ((computerSelection == 'rock' && playerSelection == 'scissors') ||
@@ -48,10 +63,13 @@ const playRound = (playerSelection) => {
     (computerSelection == 'paper' && playerSelection == 'rock')) {
         computerScore += 1
         computerScoreText.textContent = computerScore
-        scoreBoard.style.display = 'block'
+        // scoreBoard.style.display = 'block'
         return computerScore
 
     } else if (computerSelection == playerSelection) {
+        scoreBoard.style.display = 'block'
+        setTimeout(showTieScore, 1000)
+        setTimeout(hideTieScore, 5000)
         log('tie') // add 'tie round' and then make it disappear after 5 seconds'
 
     } else {
