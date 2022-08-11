@@ -96,8 +96,8 @@ const game = () => {
 
         const rockBtn = document.getElementById('rock')
             rockBtn.addEventListener('click', () => {
-                playerSelection = 'rock';
-                computerSelection = computerPlay()
+                user.selection = 'rock';
+                computer.selection = computerPlay()
 
                 playRound(playerSelection, computerSelection)
 
@@ -110,8 +110,8 @@ const game = () => {
 
         const paperBtn = document.getElementById('paper')
             paperBtn.addEventListener('click', () => {
-                playerSelection = 'paper';
-                computerSelection = computerPlay()
+                user.selection = 'paper';
+                computer.selection = computerPlay()
 
                 playRound(playerSelection, computerSelection)
 
@@ -124,8 +124,8 @@ const game = () => {
 
         const scissorsBtn = document.getElementById('scissors')
             scissorsBtn.addEventListener('click', () => {
-                playerSelection = 'scissors';
-                computerSelection = computerPlay()
+                user.selection = 'scissors';
+                computer.selection = computerPlay()
 
                 playRound(playerSelection, computerSelection)
 
