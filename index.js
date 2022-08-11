@@ -2,12 +2,14 @@ const log = console.log
 
 const user = {
     selection: '',
-    score: 0
+    score: 0,
+    scoreText: ''
 }
 
 const computer = {
     selection: '',
-    score: 0
+    score: 0,
+    scoreText: ''
 }
 
 let computerSelection = ''
