@@ -1,36 +1,34 @@
 const log = console.log
 
-const player = {
-    selection: '',
-    score: 0,
-    scoreText: document.getElementById('player-score-number')
+function Player(selection, score, scoreText) {
+    this.selection = selection
+    this.score = score
+    this.scoreText = scoreText
 }
 
-const computer = {
-    selection: '',
-    score: 0,
-    scoreText: document.getElementById('computer-score-number')
+const player = new Player('', 0, document.getElementById('player-score-number'))
+const computer = new Player('', 0, document.getElementById('computer-score-number'))
+
+const gameElements = {
+    gameContainer: document.getElementById('game-container'),
+    startBtn: document.getElementById('start-btn'),
+    scoreBoard: document.getElementById('score-board'),
+    tieScoreText: document.getElementById('tie-score'),
+    winnerText: document.querySelector('.winner')
 }
 
-let gameOptions = ['rock', 'paper', 'scissors']
-
-let computerPlay = () => {
-    return gameOptions[Math.floor(Math.random() * gameOptions.length)];
-}
+const { gameContainer, startBtn, scoreBoard, tieScoreText, winnerText } = gameElements
 
 
-const startBtn = document.getElementById('start-btn')
 
-const gameContainer = document.getElementById('game-container')
+
 gameContainer.style.display = 'none'
 
-
-
-let scoreBoard = document.getElementById('score-board')
 scoreBoard.style.display = "none"
 
-let tieScoreText = document.getElementById('tie-score')
 tieScoreText.style.display = 'none'
+
+winnerText.style.display = "none"
 
 const showTieScore = () => {
     tieScoreText.style.display = 'block'
@@ -40,10 +38,13 @@ const hideTieScore = () => {
     tieScoreText.style.display = 'none'
 }
 
-const winner = document.querySelector('.winner')
-winner.style.display = "none"
 
 
+let gameOptions = ['rock', 'paper', 'scissors']
+
+let computerPlay = () => {
+    return gameOptions[Math.floor(Math.random() * gameOptions.length)];
+}
 
 const playRound = (playerSelection, computerSelection) => {
     scoreBoard.style.display = 'block'
@@ -95,8 +96,8 @@ const game = () => {
 
                 if (player.score == 5 || computer.score == 5) {
                     gameContainer.style.display = 'none'
-                    winner.textContent = player.score == 5 ? 'you won 😎' : 'computer won'
-                    winner.style.display = 'block'
+                    winnerText.textContent = player.score == 5 ? 'you won 😎' : 'computer won'
+                    winnerText.style.display = 'block'
                 }
             })
 
@@ -109,8 +110,8 @@ const game = () => {
 
                 if (player.score == 5 || computer.score == 5) {
                     gameContainer.style.display = 'none'
-                    winner.textContent = player.score == 5 ? 'you won 😎' : 'computer won'
-                    winner.style.display = 'block'
+                    winnerText.textContent = player.score == 5 ? 'you won 😎' : 'computer won'
+                    winnerText.style.display = 'block'
                 }
             })
 
@@ -123,8 +124,8 @@ const game = () => {
 
                 if (player.score == 5 || computer.score == 5) {
                     gameContainer.style.display = 'none'
-                    winner.textContent = player.score == 5 ? 'you won 😎' : 'computer won'
-                    winner.style.display = 'block'
+                    winnerText.textContent = player.score == 5 ? 'you won 😎' : 'computer won'
+                    winnerText.style.display = 'block'
                 }
             })
         }}
