@@ -1,5 +1,15 @@
 const log = console.log
 
+const user = {
+    selection: '',
+    score: 0
+}
+
+const computer = {
+    selection: '',
+    score: 0
+}
+
 let computerSelection = ''
 let playerSelection = ''
 
