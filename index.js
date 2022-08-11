@@ -29,9 +29,6 @@ gameContainer.style.display = 'none'
 let scoreBoard = document.getElementById('score-board')
 scoreBoard.style.display = "none"
 
-// let playerScoreText = 
-// let computerScoreText = 
-
 let tieScoreText = document.getElementById('tie-score')
 tieScoreText.style.display = 'none'
 
@@ -52,21 +49,21 @@ const playRound = (playerSelection, computerSelection) => {
     scoreBoard.style.display = 'block'
 
 
-    if ((player.selection == 'rock' && computer.selection == 'scissors') ||
-    (playerSelection == 'scissors' && computer.selection == 'paper') ||
-    (player.selection == 'paper' && computer.selection == 'rock')) {
+    if ((playerSelection == 'rock' && computerSelection == 'scissors') ||
+    (playerSelection == 'scissors' && computerSelection == 'paper') ||
+    (playerSelection == 'paper' && computerSelection == 'rock')) {
         player.score += 1
         player.scoreText.textContent = player.score
         return player.score
 
-    } else if ((computer.selection == 'rock' && player.selection == 'scissors') ||
-    (computer.selection == 'scissors' && player.selection == 'paper') ||
-    (computer.selection == 'paper' && player.selection == 'rock')) {
+    } else if ((computerSelection == 'rock' && playerSelection == 'scissors') ||
+    (computerSelection == 'scissors' && playerSelection == 'paper') ||
+    (computerSelection == 'paper' && playerSelection == 'rock')) {
         computer.score += 1
         computer.scoreText.textContent = computer.score
         return computer.score
 
-    } else if (computer.selection == player.selection) {
+    } else if (computerSelection == playerSelection) {
         scoreBoard.style.display = 'block'
         showTieScore()
         setTimeout(hideTieScore, 1500)
