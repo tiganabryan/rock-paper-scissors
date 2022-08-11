@@ -1,23 +1,16 @@
 const log = console.log
 
-const user = {
+const player = {
     selection: '',
     score: 0,
-    scoreText: ''
+    scoreText: document.getElementById('player-score-number')
 }
 
 const computer = {
     selection: '',
     score: 0,
-    scoreText: ''
+    scoreText: document.getElementById('computer-score-number')
 }
-
-let computerSelection = ''
-let playerSelection = ''
-
-let computerScore = 0 
-let playerScore = 0
-
 
 let gameOptions = ['rock', 'paper', 'scissors']
 
@@ -36,8 +29,8 @@ gameContainer.style.display = 'none'
 let scoreBoard = document.getElementById('score-board')
 scoreBoard.style.display = "none"
 
-let playerScoreText = document.getElementById('player-score-number')
-let computerScoreText = document.getElementById('computer-score-number')
+// let playerScoreText = 
+// let computerScoreText = 
 
 let tieScoreText = document.getElementById('tie-score')
 tieScoreText.style.display = 'none'
@@ -59,21 +52,21 @@ const playRound = (playerSelection, computerSelection) => {
     scoreBoard.style.display = 'block'
 
 
-    if ((playerSelection == 'rock' && computerSelection == 'scissors') ||
-    (playerSelection == 'scissors' && computerSelection == 'paper') ||
-    (playerSelection == 'paper' && computerSelection == 'rock')) {
-        playerScore += 1
-        playerScoreText.textContent = playerScore
-        return playerScore
+    if ((player.selection == 'rock' && computer.selection == 'scissors') ||
+    (playerSelection == 'scissors' && computer.selection == 'paper') ||
+    (player.selection == 'paper' && computer.selection == 'rock')) {
+        player.score += 1
+        player.scoreText.textContent = player.score
+        return player.score
 
-    } else if ((computerSelection == 'rock' && playerSelection == 'scissors') ||
-    (computerSelection == 'scissors' && playerSelection == 'paper') ||
-    (computerSelection == 'paper' && playerSelection == 'rock')) {
-        computerScore += 1
-        computerScoreText.textContent = computerScore
-        return computerScore
+    } else if ((computer.selection == 'rock' && player.selection == 'scissors') ||
+    (computer.selection == 'scissors' && player.selection == 'paper') ||
+    (computer.selection == 'paper' && player.selection == 'rock')) {
+        computer.score += 1
+        computer.scoreText.textContent = computer.score
+        return computer.score
 
-    } else if (computerSelection == playerSelection) {
+    } else if (computer.selection == player.selection) {
         scoreBoard.style.display = 'block'
         showTieScore()
         setTimeout(hideTieScore, 1500)
@@ -90,50 +83,50 @@ startBtn.addEventListener('click', () => {
 
 const game = () => {
     scoreBoard.style.display = "block"
-    playerScoreText.textContent = playerScore
-    computerScoreText.textContent = computerScore
+    player.scoreText.textContent = player.score
+    computer.scoreText.textContent = computer.score
 
-    if (playerScore < 5 && computerScore < 5) {
+    if (player.score < 5 && computer.score < 5) {
         gameContainer.style.display = 'flex'
 
         const rockBtn = document.getElementById('rock')
             rockBtn.addEventListener('click', () => {
-                user.selection = 'rock';
+                player.selection = 'rock';
                 computer.selection = computerPlay()
 
-                playRound(playerSelection, computerSelection)
+                playRound(player.selection, computer.selection)
 
-                if (playerScore == 5 || computerScore == 5) {
+                if (player.score == 5 || computer.score == 5) {
                     gameContainer.style.display = 'none'
-                    winner.textContent = playerScore == 5 ? 'you won 😎' : 'computer won'
+                    winner.textContent = player.score == 5 ? 'you won 😎' : 'computer won'
                     winner.style.display = 'block'
                 }
             })
 
         const paperBtn = document.getElementById('paper')
             paperBtn.addEventListener('click', () => {
-                user.selection = 'paper';
+                player.selection = 'paper';
                 computer.selection = computerPlay()
 
-                playRound(playerSelection, computerSelection)
+                playRound(player.selection, computer.selection)
 
-                if (playerScore == 5 || computerScore == 5) {
+                if (player.score == 5 || computer.score == 5) {
                     gameContainer.style.display = 'none'
-                    winner.textContent = playerScore == 5 ? 'you won 😎' : 'computer won'
+                    winner.textContent = player.score == 5 ? 'you won 😎' : 'computer won'
                     winner.style.display = 'block'
                 }
             })
 
         const scissorsBtn = document.getElementById('scissors')
             scissorsBtn.addEventListener('click', () => {
-                user.selection = 'scissors';
+                player.selection = 'scissors';
                 computer.selection = computerPlay()
 
-                playRound(playerSelection, computerSelection)
+                playRound(player.selection, computer.selection)
 
-                if (playerScore == 5 || computerScore == 5) {
+                if (player.score == 5 || computer.score == 5) {
                     gameContainer.style.display = 'none'
-                    winner.textContent = playerScore == 5 ? 'you won 😎' : 'computer won'
+                    winner.textContent = player.score == 5 ? 'you won 😎' : 'computer won'
                     winner.style.display = 'block'
                 }
             })
